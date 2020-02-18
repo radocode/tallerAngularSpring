@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
     //   .subscribe((quote: string) => {
     //     this.quote = quote;
     //   });
-    // this.tableService.getRandomData().subscribe((response: any) => {
-    //   console.log(response);
-    //   this.items = response;
-    // });
+    this.tableService.getRandomData().subscribe((response: any) => {
+      console.log(response);
+      this.items = response;
+    });
   }
 }

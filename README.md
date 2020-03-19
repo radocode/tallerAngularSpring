@@ -3,6 +3,20 @@
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 7.1.0
 
+# Notas especiales!
+
+Este proyecto esta docketizado, para ejecutar primero hay que crear el container:
+
+sudo docker build -t taller-angular-spring:prod .
+
+Y para ejecutar el container:
+
+sudo docker run -p 80:80 taller-angular-spring:prod
+
+Esto fue hecho usando la dependencia "@angular-builders/custom-webpack": "^8.4.1"
+
+Fijarse bien el el Dockerfile, en la configuracion de angular.json y en custom-webpack.config.js
+
 # Getting started
 
 1. Go to project folder and install dependencies:

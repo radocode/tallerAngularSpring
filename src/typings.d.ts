@@ -10,3 +10,10 @@ declare var module: NodeModule;
 interface NodeModule {
   id: string;
 }
+
+declare var $ENV: Env;
+
+interface Env {
+  SomeAPIKey: string;
+  SomeOtherAPIKey: string;
+}

@@ -16,6 +16,9 @@ const log = new Logger('App');
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
+  public SomeAPIKey = environment.APIKeys.SomeAPIKey;
+  public SomeOtherAPIKey = environment.APIKeys.SomeOtherAPIKey;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -29,6 +32,9 @@ export class AppComponent implements OnInit, OnDestroy {
     if (environment.production) {
       Logger.enableProductionMode();
     }
+
+    console.log('el entorno de SomeAPIKey es: ', this.SomeAPIKey);
+    console.log('el entorno de SomeOtherAPIKey es: ', this.SomeOtherAPIKey);
 
     log.debug('init');
 

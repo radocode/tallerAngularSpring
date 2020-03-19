@@ -7,6 +7,7 @@
     "build": "npm run env -s && ng build --prod",
     "start": "npm run env -s && ng serve --proxy-config proxy.conf.js",
     "serve:sw": "npm run build -s && npx http-server ./dist -p 4200",
+    "preCommit": "ng lint && ng test --watch=false --code-coverage && ng build --prod",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
     "test": "npm run env -s && ng test",
     "test:ci": "npm run env -s && npm run lint -s && ng test --configuration=ci",
@@ -27,25 +28,26 @@
     "@angular/platform-browser": "^8.1.0",
     "@angular/platform-browser-dynamic": "^8.1.0",
     "@angular/router": "^8.1.0",
-    "@ngx-translate/core": "^11.0.1",
     "@angular/service-worker": "^8.1.0",
-    "@ng-bootstrap/ng-bootstrap": "^5.0.0-rc.1",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@ng-bootstrap/ng-bootstrap": "^5.3.0",
+    "@ngx-translate/core": "^11.0.1",
     "bootstrap": "^4.1.1",
-    "@fortawesome/fontawesome-free": "^5.1.0",
     "rxjs": "^6.5.2",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^8.4.1",
+    "@angular-devkit/build-angular": "~0.803.24",
     "@angular/cli": "~8.1.0",
     "@angular/compiler-cli": "^8.1.0",
     "@angular/language-service": "^8.1.0",
-    "@angular-devkit/build-angular": "^0.801.0",
     "@angularclass/hmr": "^2.1.3",
     "@biesbjerg/ngx-translate-extract": "^2.3.4",
     "@ngx-rocket/scripts": "^4.0.0",
-    "@types/jasmine": "^3.3.13",
+    "@types/jasmine": "^3.5.9",
     "@types/jasminewd2": "^2.0.3",
-    "@types/node": "^10.9.0",
+    "@types/node": "^10.17.17",
     "codelyzer": "^5.1.0",
     "htmlhint": "^0.11.0",
     "https-proxy-agent": "^2.0.0",
@@ -56,21 +58,20 @@
     "karma-cli": "~2.0.0",
     "karma-coverage-istanbul-reporter": "^2.0.2",
     "karma-jasmine": "^2.0.1",
-    "karma-jasmine-html-reporter": "^1.4.0",
+    "karma-jasmine-html-reporter": "^1.5.2",
     "karma-junit-reporter": "^1.2.0",
     "prettier": "^1.16.3",
-    "tslint-config-prettier": "^1.14.0",
-    "stylelint-config-prettier": "^5.1.0",
     "pretty-quick": "^1.10.0",
-    "husky": "^3.0.0",
-    "protractor": "~5.4.0",
+    "protractor": "^5.4.3",
     "puppeteer": "^1.17.0",
     "stylelint": "~10.1.0",
+    "stylelint-config-prettier": "^5.1.0",
     "stylelint-config-recommended-scss": "~3.3.0",
     "stylelint-config-standard": "~18.3.0",
     "stylelint-scss": "~3.9.0",
-    "ts-node": "^8.3.0",
+    "ts-node": "^8.7.0",
     "tslint": "~5.18.0",
+    "tslint-config-prettier": "^1.14.0",
     "typescript": "~3.4.0"
   },
   "prettier": {
@@ -83,10 +84,5 @@
         }
       }
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }

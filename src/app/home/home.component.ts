@@ -3,6 +3,7 @@ import { finalize } from 'rxjs/operators';
 
 import { QuoteService } from './quote.service';
 import { TableService } from '@app/core/table.service';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,9 @@ import { TableService } from '@app/core/table.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public SomeAPIKey = environment.APIKeys.SomeAPIKey;
+  public SomeOtherAPIKey = environment.APIKeys.SomeOtherAPIKey;
+
   quote: string | undefined;
   isLoading = false;
 

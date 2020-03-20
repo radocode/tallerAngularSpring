@@ -7,11 +7,14 @@ version 7.1.0
 
 Este proyecto esta docketizado, para ejecutar primero hay que crear el container:
 
+```sh
 sudo docker build -t taller-angular-spring:prod .
-
+```
 Y para ejecutar el container:
 
+```sh
 sudo docker run -p 80:80 taller-angular-spring:prod
+```
 
 Esto fue hecho usando la dependencia "@angular-builders/custom-webpack": "^8.4.1"
 
